@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: ground
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1241639253, guid: c0ae7d4ba8f1eb545ab88c0ae8877c9b, type: 3}
+  m_Sprite: {fileID: 1637971481, guid: ff83f5ef1a133fb48ae35e0aeb47ca8f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
