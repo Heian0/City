@@ -184,7 +184,7 @@ public class MapManager_T : MonoBehaviour
         map.SetTile(l_pos, getTileWithID(l_id));
     }
 
-    public void placeBuilding
+    //public void placeBuilding;
 
     public TileBase getTileWithID(int id)
     {
