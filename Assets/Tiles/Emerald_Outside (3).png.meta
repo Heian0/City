@@ -125,7 +125,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,6 +133,342 @@ TextureImporter:
       bones: []
       spriteID: 373b60f6b2a117c42aa2071877f161e0
       internalID: -711084703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1992
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea0f4340c0ce1846b6774a5c34545d1
+      internalID: 1272565441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1992
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 269573728e74c994cbc1cde672ee7644
+      internalID: 1277304185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1992
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2265efef39c29e498c2e6ee5a2d7b6c
+      internalID: -381014519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1992
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40797a3a2be64cc489fbdb4e335812a1
+      internalID: -132220051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5acb3aaaf90cb04f8ebd8ec34b7ebac
+      internalID: 568159125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937c42b9f3f8c5746acbf66b3614e26a
+      internalID: -1598325049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3721d7f6184e0404092946844958d8be
+      internalID: -2058112926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c013b30a70b10eb47837a16dcb8fe8ea
+      internalID: -216510140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113f0c6a614efb5499a40dac354c7fd5
+      internalID: 197134989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec9dab4048799a645853378a00cfb151
+      internalID: -1806836733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9491298a1ef8630479ee97c24e0a7611
+      internalID: 172967763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b113c1b3ff3de4ea980808becb5fd3
+      internalID: -1553601559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f1c76266cec7146a04299a89ad1e35
+      internalID: -663635797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0c8971dc2762654a913b53425ee4cf2
+      internalID: 1274053518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 076324a62be02a448a81aa80486cda76
+      internalID: 958621326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Emerald_Outside (3)_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e8cce5b86982f548a8695f47d95b0ef
+      internalID: -1307055933
       vertices: []
       indices: 
       edges: []
@@ -148,7 +484,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Emerald_Outside (3)_9: 197134989
+      Emerald_Outside (3)_12: -1553601559
+      Emerald_Outside (3)_16: -1307055933
+      Emerald_Outside (3)_4: -132220051
       Emerald_Outside (3)_0: 1543678119
+      Emerald_Outside (3)_1: 1272565441
+      Emerald_Outside (3)_2: 1277304185
+      Emerald_Outside (3)_14: 1274053518
+      Emerald_Outside (3)_11: 172967763
+      Emerald_Outside (3)_5: 568159125
+      Emerald_Outside (3)_7: -2058112926
+      Emerald_Outside (3)_13: -663635797
+      Emerald_Outside (3)_15: 958621326
+      Emerald_Outside (3)_10: -1806836733
+      Emerald_Outside (3)_8: -216510140
+      Emerald_Outside (3)_3: -381014519
+      Emerald_Outside (3)_6: -1598325049
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
