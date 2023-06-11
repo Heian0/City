@@ -8,5 +8,10 @@ public class TileData : ScriptableObject
 {
     public TileBase tile;
 
+    public bool canPlaceBuilding;
+
+    //0 grass, 1 sand
+    public int groundCode;
+
     public int id;
 }

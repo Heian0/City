@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Ground207
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: e7e72801e9f93244e8a913afcf2baf72, type: 2}
+  canPlaceBuilding: 1
+  groundCode: 1
   id: 207

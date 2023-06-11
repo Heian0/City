@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ff3df2f8aef4d41bec872eece2c0c2, type: 3}
+  m_Name: Big Rock
+  m_EditorClassIdentifier: 
+  layout:
+  - list: 010000000100000001000000
+  - list: 010000000100000001000000
+  - list: 010000000100000001000000
+  id: 2
+  w: 3
+  h: 3
+  groundCode: 99
+  buildingTiles:
+  - {fileID: 11400000, guid: 6c9f1711698dce749916cebfca3aa859, type: 2}
+  - {fileID: 11400000, guid: f60ee17bc05889e45a2dcfebf078b395, type: 2}
+  - {fileID: 11400000, guid: 045b29f76a6b4dc49bcfd14a67e6da06, type: 2}
+  - {fileID: 11400000, guid: 67902a6102bdf724693e6cff033f21da, type: 2}
+  - {fileID: 11400000, guid: 8facabd3d0e971644ba98264d1d1cd14, type: 2}
+  - {fileID: 11400000, guid: 168f043a94324334da87ffe2d0f136ef, type: 2}
+  - {fileID: 11400000, guid: 9e412f7c81b4f6540a96fcad3831cb9f, type: 2}
+  - {fileID: 11400000, guid: e2440c50a2722034eb338b9f28ca4ae3, type: 2}
+  - {fileID: 11400000, guid: fac20e7769355154cab74a9fb27e8f72, type: 2}

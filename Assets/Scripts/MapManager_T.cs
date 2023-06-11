@@ -14,6 +14,9 @@ public class MapManager_T : MonoBehaviour
     [SerializeField]
     private List<TileData> tileDatas;
 
+    [SerializeField]
+    private List<BuildingData> buildingDatas;
+
     public Dictionary<TileBase, TileData> dataFromBase = new Dictionary<TileBase, TileData>();
 
     private void Awake()
@@ -151,6 +154,30 @@ public class MapManager_T : MonoBehaviour
             //200 should become id of selected tile in shop
             placeTile(200, gridPos);
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int gridPos = buildingMap.WorldToCell(mousePos);
+
+            placeBuilding(0, gridPos);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int gridPos = buildingMap.WorldToCell(mousePos);
+
+            placeBuilding(1, gridPos);
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3Int gridPos = buildingMap.WorldToCell(mousePos);
+
+            placeBuilding(2, gridPos);
+        }
     }
 
     private void placeTile(int tileid, Vector3Int gridPos)
@@ -184,7 +211,42 @@ public class MapManager_T : MonoBehaviour
         map.SetTile(l_pos, getTileWithID(l_id));
     }
 
-    //public void placeBuilding;
+    private void placeBuilding(int buildingid, Vector3Int gridPos)
+    {
+        List<Vector3Int> vlist = new List<Vector3Int>();
+
+        BuildingData bdata = getBuldingDataWithID(buildingid);
+
+        for (int i = 0; i < bdata.layout.Count; i++)
+        {
+            for(int j = 0; j < bdata.layout[i].list.Count; j++)
+            {
+                if (bdata.layout[i].list[j] == 1)
+                {
+
+                    Vector3Int pos = gridPos + new Vector3Int(j, -i);
+                    print(map.GetTile(pos));
+                    if (dataFromBase[map.GetTile(pos)].canPlaceBuilding == false)
+                    {
+                        return;
+                    }
+                    print(dataFromBase[map.GetTile(pos)].groundCode);
+                    print(bdata.groundCode);
+                    if (bdata.groundCode != 99 && dataFromBase[map.GetTile(pos)].groundCode != bdata.groundCode)
+                    {
+                        return;
+                    }
+
+                    vlist.Add(pos);
+                }
+            }
+        }
+
+        for (int i = 0; i < bdata.buildingTiles.Count; i++)
+        {
+            buildingMap.SetTile(vlist[i], bdata.buildingTiles[i]);
+        }
+    }
 
     public TileBase getTileWithID(int id)
     {
@@ -193,6 +255,18 @@ public class MapManager_T : MonoBehaviour
             if (tiledata.id == id)
             {
                 return tiledata.tile;
+            }
+        }
+
+        return null;
+    }
+    public BuildingData getBuldingDataWithID(int id)
+    {
+        foreach (BuildingData data in buildingDatas)
+        {
+            if (data.id == id)
+            {
+                return data;
             }
         }
 

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ff3df2f8aef4d41bec872eece2c0c2, type: 3}
+  m_Name: Pokemon Centre
+  m_EditorClassIdentifier: 
+  layout:
+  - list: 01000000010000000100000001000000
+  - list: 01000000010000000100000001000000
+  - list: 01000000010000000100000001000000
+  - list: 01000000010000000100000001000000
+  id: 0
+  w: 4
+  h: 4
+  groundCode: 99
+  buildingTiles:
+  - {fileID: 11400000, guid: d67fcc1c49fffee45b818e5573039c08, type: 2}
+  - {fileID: 11400000, guid: 32b0987aeb2d3f849bf2e496b45795b6, type: 2}
+  - {fileID: 11400000, guid: 09be2f39d34052942a595dc254ecff31, type: 2}
+  - {fileID: 11400000, guid: c98462e721695aa4da586cea34176284, type: 2}
+  - {fileID: 11400000, guid: b423984eef3d7ac4da2b03047a995f71, type: 2}
+  - {fileID: 11400000, guid: 3c959fa0201e9044688e88e0e6861e82, type: 2}
+  - {fileID: 11400000, guid: 28ed1800e510dd34eb816c8cd41a3866, type: 2}
+  - {fileID: 11400000, guid: feb7cba498b5e1244a388eccfcae281c, type: 2}
+  - {fileID: 11400000, guid: 54fd9f9684d8c62438b4a4d0b9503ce9, type: 2}
+  - {fileID: 11400000, guid: efe5b4961a7daaf4e92ab65db7fe683b, type: 2}
+  - {fileID: 11400000, guid: 25cdf536841749749b0fa810991dfca8, type: 2}
+  - {fileID: 11400000, guid: 3ce83fcf96842754e812c44e70f6f18f, type: 2}
+  - {fileID: 11400000, guid: 1f53ac3e0ad5bd64d8c0d64a62e8b6b2, type: 2}
+  - {fileID: 11400000, guid: 6bf0fcce429ff9d4d86e480f3082db1d, type: 2}
+  - {fileID: 11400000, guid: eb2dd7862a80b2649b32b1075b1f9271, type: 2}
+  - {fileID: 11400000, guid: 20a4e274d666be746b1ec76094ba0063, type: 2}
