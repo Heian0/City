@@ -17,6 +17,8 @@ public class ShopItem_N : MonoBehaviour
     public TMP_Text priceTxt;
     public TMP_Text nameTxt;
     public Image itemImage;
+    public int id;
+    public string type;
     //public GameObject buyPanel;
     public ShopManager_N shopManager; 
     
@@ -42,6 +44,7 @@ public class ShopItem_N : MonoBehaviour
     public void DisplayItem()
     {
         //buyPanel.SetActive(true);
+        shopManager.curItem = this;
         priceTxt.text = itemPrice.ToString() + " Gold";
         nameTxt.text = itemName.text;
         itemImage.sprite = itemArt.sprite;     

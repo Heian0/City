@@ -19,6 +19,9 @@ public class MapManager_T : MonoBehaviour
 
     public Dictionary<TileBase, TileData> dataFromBase = new Dictionary<TileBase, TileData>();
 
+    public int selectedID;
+    public string selectedType;
+
     private void Awake()
     {
         foreach (var tileData in tileDatas)
@@ -152,7 +155,17 @@ public class MapManager_T : MonoBehaviour
             Vector3Int gridPos = map.WorldToCell(mousePos);
 
             //200 should become id of selected tile in shop
-            placeTile(200, gridPos);
+
+
+            if (selectedType == "tile")
+            {
+                placeTile(selectedID, gridPos);
+            }
+
+            if (selectedType == "building")
+            {
+                placeBuilding(selectedID, gridPos);
+            }   
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -226,7 +239,7 @@ public class MapManager_T : MonoBehaviour
 
                     Vector3Int pos = gridPos + new Vector3Int(j, -i);
                     print(map.GetTile(pos));
-                    if (dataFromBase[map.GetTile(pos)].canPlaceBuilding == false)
+                    if (dataFromBase[map.GetTile(pos)].canPlaceBuilding == false || buildingMap.HasTile(pos))
                     {
                         return;
                     }

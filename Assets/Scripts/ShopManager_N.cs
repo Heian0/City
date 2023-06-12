@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class ShopManager_N : MonoBehaviour
 {
     public int gold;
-    // Start is called before the first frame update
+    public TMP_Text goldCounter;
+    public MapManager_T mapManager;
+    public ShopItem_N curItem;
+
     void Start()
     {
         
@@ -14,6 +19,12 @@ public class ShopManager_N : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        goldCounter.text = gold.ToString() + " Gold";
+    }
+
+    public void OnSelectedItem()
+    {
+        mapManager.selectedID = curItem.id;
+        mapManager.selectedType = curItem.type;
     }
 }
