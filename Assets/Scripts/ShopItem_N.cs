@@ -8,7 +8,7 @@ public class ShopItem_N : MonoBehaviour
 {
     [Header("Item Stats")]
     [SerializeField]
-    private int itemPrice;
+    public int itemPrice;
     [SerializeField]
     private TMP_Text itemName;
     [SerializeField]

@@ -1339,8 +1339,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be1568b2e024b354b876a4ef7f53e7f9, type: 2}
   - {fileID: 11400000, guid: 2de8702a06c269b48b874270655c6f9d, type: 2}
   - {fileID: 11400000, guid: 1cace2b8810650f43b5565553ff42662, type: 2}
+  shopManager: {fileID: 492057324}
   selectedID: 0
   selectedType: 
+  cost: 0
 --- !u!4 &1012754052
 Transform:
   m_ObjectHideFlags: 0
@@ -5443,7 +5445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1542609689322615448, guid: a61e6234a35743d49b3123416f17b213, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnSelectedItem
+      value: OnBuyItem
       objectReference: {fileID: 0}
     - target: {fileID: 1542609689322615448, guid: a61e6234a35743d49b3123416f17b213, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

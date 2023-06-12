@@ -19,8 +19,10 @@ public class MapManager_T : MonoBehaviour
 
     public Dictionary<TileBase, TileData> dataFromBase = new Dictionary<TileBase, TileData>();
 
+    public ShopManager_N shopManager;
     public int selectedID;
     public string selectedType;
+    public int cost;
 
     private void Awake()
     {
@@ -195,6 +197,13 @@ public class MapManager_T : MonoBehaviour
 
     private void placeTile(int tileid, Vector3Int gridPos)
     {
+
+        if (shopManager.gold < cost)
+        {
+            print("you are broke.");
+            return;
+        }
+
         Vector3Int tl_pos = gridPos + new Vector3Int(-1, 1);
         Vector3Int t_pos = gridPos + new Vector3Int(0, 1);
         Vector3Int tr_pos = gridPos + new Vector3Int(1, 1);
@@ -222,6 +231,8 @@ public class MapManager_T : MonoBehaviour
         map.SetTile(b_pos, getTileWithID(b_id));
         map.SetTile(bl_pos, getTileWithID(bl_id));
         map.SetTile(l_pos, getTileWithID(l_id));
+
+        shopManager.gold = shopManager.gold - cost;
     }
 
     private void placeBuilding(int buildingid, Vector3Int gridPos)
@@ -229,6 +240,12 @@ public class MapManager_T : MonoBehaviour
         List<Vector3Int> vlist = new List<Vector3Int>();
 
         BuildingData bdata = getBuldingDataWithID(buildingid);
+
+        if (shopManager.gold < cost)
+        {
+            print("you are broke.");
+            return;
+        }
 
         for (int i = 0; i < bdata.layout.Count; i++)
         {
@@ -259,6 +276,8 @@ public class MapManager_T : MonoBehaviour
         {
             buildingMap.SetTile(vlist[i], bdata.buildingTiles[i]);
         }
+
+        shopManager.gold = shopManager.gold - cost;
     }
 
     public TileBase getTileWithID(int id)

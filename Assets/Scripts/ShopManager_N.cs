@@ -22,9 +22,11 @@ public class ShopManager_N : MonoBehaviour
         goldCounter.text = gold.ToString() + " Gold";
     }
 
-    public void OnSelectedItem()
+    public void OnBuyItem()
     {
+
         mapManager.selectedID = curItem.id;
         mapManager.selectedType = curItem.type;
+        mapManager.cost = curItem.itemPrice;
     }
 }
