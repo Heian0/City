@@ -154,7 +154,8 @@ MonoBehaviour:
   priceTxt: {fileID: 0}
   nameTxt: {fileID: 0}
   itemImage: {fileID: 0}
-  buyPanel: {fileID: 0}
+  buyPanel: {fileID: 6101097687924225761, guid: a61e6234a35743d49b3123416f17b213, type: 3}
+  shopManager: {fileID: 0}
 --- !u!1001 &1963237024606880303
 PrefabInstance:
   m_ObjectHideFlags: 0

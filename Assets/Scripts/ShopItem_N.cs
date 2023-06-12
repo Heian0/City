@@ -17,7 +17,8 @@ public class ShopItem_N : MonoBehaviour
     public TMP_Text priceTxt;
     public TMP_Text nameTxt;
     public Image itemImage;
-    public GameObject buyPanel;
+    //public GameObject buyPanel;
+    public ShopManager_N shopManager; 
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class ShopItem_N : MonoBehaviour
         priceTxt = GameObject.Find("Price").GetComponent<TMP_Text>();
         nameTxt = GameObject.Find("Item Name").GetComponent<TMP_Text>();
         itemImage = GameObject.Find("Image").GetComponent<Image>();
+        shopManager = GameObject.Find("ShopManager").GetComponent<ShopManager_N>();
     }
 
     void Awake()
@@ -42,6 +44,6 @@ public class ShopItem_N : MonoBehaviour
         //buyPanel.SetActive(true);
         priceTxt.text = itemPrice.ToString() + " Gold";
         nameTxt.text = itemName.text;
-        itemImage.sprite = itemArt.sprite;
+        itemImage.sprite = itemArt.sprite;     
     }
 }
