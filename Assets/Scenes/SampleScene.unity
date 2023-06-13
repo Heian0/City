@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 5109370}
   - component: {fileID: 5109369}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: ' Canvasa'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -461,7 +461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3187223931782580268, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
       propertyPath: m_Name
-      value: Rock but big
+      value: Big Rock
       objectReference: {fileID: 0}
     - target: {fileID: 3187223932907296474, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
       propertyPath: m_Sprite
