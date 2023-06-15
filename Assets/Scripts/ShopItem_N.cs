@@ -20,15 +20,16 @@ public class ShopItem_N : MonoBehaviour
     public int id;
     public string type;
     //public GameObject buyPanel;
-    public ShopManager_N shopManager; 
-    
+    public BuyState buyState;
+    public MetaData metaData;
+
     // Start is called before the first frame update
     void Start()
     {
+        metaData = GameObject.Find("MapManager").GetComponent<MetaData>();
         priceTxt = GameObject.Find("Price").GetComponent<TMP_Text>();
         nameTxt = GameObject.Find("Item Name").GetComponent<TMP_Text>();
         itemImage = GameObject.Find("Image").GetComponent<Image>();
-        shopManager = GameObject.Find("ShopManager").GetComponent<ShopManager_N>();
     }
 
     void Awake()
@@ -44,7 +45,7 @@ public class ShopItem_N : MonoBehaviour
     public void DisplayItem()
     {
         //buyPanel.SetActive(true);
-        shopManager.curItem = this;
+        metaData.curItem = this;
         priceTxt.text = itemPrice.ToString() + " Gold";
         nameTxt.text = itemName.text;
         itemImage.sprite = itemArt.sprite;     
