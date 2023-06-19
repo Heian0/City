@@ -17,6 +17,7 @@ public class PlayerController_N : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //fix this
         if (Mathf.Abs(cameraPosition.x) <= 13)
         {
             if (Input.GetKey(KeyCode.A))
