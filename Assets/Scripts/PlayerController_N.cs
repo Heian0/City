@@ -17,26 +17,23 @@ public class PlayerController_N : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //fix this
-        if (Mathf.Abs(cameraPosition.x) <= 13)
+        if (Input.GetKey(KeyCode.A))
         {
-            if (Input.GetKey(KeyCode.A))
-            {
-                cameraPosition.x -= cameraSpeed;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                cameraPosition.x += cameraSpeed;
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                cameraPosition.y -= cameraSpeed;
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                cameraPosition.y += cameraSpeed;
-            }
+            cameraPosition.x -= cameraSpeed;
         }
+        if (Input.GetKey(KeyCode.D))
+        {
+            cameraPosition.x += cameraSpeed;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            cameraPosition.y -= cameraSpeed;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            cameraPosition.y += cameraSpeed;
+        }
+
 
         //this is for setting camera boundaries but we don't need that rn
         /*else if (cameraPosition.x > 13)

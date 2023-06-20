@@ -27,6 +27,7 @@ public class BuildState : GameBaseState
 
             if (metaData.selectedType == "building")
             {
+                //we need to change this into just instatiating a prefab for the building - Nicholas
                 placeBuilding(metaData.selectedID, gridPos);
             }   
         }

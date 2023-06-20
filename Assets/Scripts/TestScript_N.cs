@@ -17,8 +17,11 @@ public class TestScript_N : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //gets mouse pos
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        //moves game object to mouse then snaps to grid
         transform.position = Vector2.Lerp(transform.position, mousePosition, moveSpeed);
         Vector3Int cp = g_grid.LocalToCell(transform.localPosition);
         transform.localPosition = g_grid.GetCellCenterLocal(cp);

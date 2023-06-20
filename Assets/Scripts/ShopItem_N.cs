@@ -13,13 +13,17 @@ public class ShopItem_N : MonoBehaviour
     private TMP_Text itemName;
     [SerializeField]
     private Image itemArt;
+
     [Header("References")]
     public TMP_Text priceTxt;
     public TMP_Text nameTxt;
     public Image itemImage;
     public int id;
     public string type;
+    public SpriteRenderer ghostSprite;
+    public GameObject ghostObject;
     //public GameObject buyPanel;
+
     public BuyState buyState;
     public MetaData metaData;
 
@@ -30,6 +34,8 @@ public class ShopItem_N : MonoBehaviour
         priceTxt = GameObject.Find("Price").GetComponent<TMP_Text>();
         nameTxt = GameObject.Find("Item Name").GetComponent<TMP_Text>();
         itemImage = GameObject.Find("Image").GetComponent<Image>();
+        ghostSprite = GameObject.Find("Ghost Image").GetComponent<SpriteRenderer>();
+        ghostObject = GameObject.Find("Ghost Image");
     }
 
     void Awake()
@@ -44,10 +50,16 @@ public class ShopItem_N : MonoBehaviour
 
     public void DisplayItem()
     {
-        //buyPanel.SetActive(true);
+        //set the metadata to the current item selected
         metaData.curItem = this;
+
+        //changes item stats in buy panel to the currently selected shop item
         priceTxt.text = itemPrice.ToString() + " Gold";
         nameTxt.text = itemName.text;
-        itemImage.sprite = itemArt.sprite;     
+        itemImage.sprite = itemArt.sprite;
+
+        //sets the ghost image to the currently selected shop item
+        ghostSprite.sprite = itemArt.sprite;
+        ghostObject.SetActive(false);
     }
 }
