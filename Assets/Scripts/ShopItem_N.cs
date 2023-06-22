@@ -65,5 +65,6 @@ public class ShopItem_N : MonoBehaviour
 
         //sets the sprite of the object to be instantiated
         instantSprite.sprite = itemArt.sprite;
+        print("something");
     }
 }

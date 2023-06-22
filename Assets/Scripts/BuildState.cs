@@ -31,7 +31,7 @@ public class BuildState : GameBaseState
                 //placeBuilding(metaData.selectedID, gridPos);
 
                 //instantiating a prefab of an interactable building at the mouse cursor
-                //Instantiate(metaData.instantObject, mousePos, );
+                //Instantiate(metaData.instantObject, mousePos);
             }   
         }
 
