@@ -22,6 +22,7 @@ public class ShopItem_N : MonoBehaviour
     public string type;
     public SpriteRenderer ghostSprite;
     public GameObject ghostObject;
+    public SpriteRenderer instantSprite;
     //public GameObject buyPanel;
 
     public BuyState buyState;
@@ -61,5 +62,8 @@ public class ShopItem_N : MonoBehaviour
         //sets the ghost image to the currently selected shop item
         ghostSprite.sprite = itemArt.sprite;
         ghostObject.SetActive(false);
+
+        //sets the sprite of the object to be instantiated
+        instantSprite.sprite = itemArt.sprite;
     }
 }

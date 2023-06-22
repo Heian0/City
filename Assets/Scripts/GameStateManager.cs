@@ -6,11 +6,15 @@ public class GameStateManager : MonoBehaviour
 {
     GameBaseState currState;
 
+    //gamestates
     public BuildState buildState = new BuildState();
     public BuyState buyState = new BuyState();
+    public NullState nullState = new NullState();
+
     public MetaData metaData;
 
     public GameObject ghostObject;
+    public SpriteRenderer ghostSprite;
 
     private bool beingHandled = false;
 
@@ -24,7 +28,7 @@ public class GameStateManager : MonoBehaviour
         metaData = GameObject.Find("MapManager").GetComponent<MetaData>();
 
         //finds the "Ghost Image" object and its sprite renderer
-        ghostObject = GameObject.Find("Ghost Image");
+        ghostSprite = ghostObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -37,11 +41,33 @@ public class GameStateManager : MonoBehaviour
         currState = gameState;
         gameState.EnterState(this);
     }
+
+    //
+    public void OnShopHover()
+    {
+        ghostObject.SetActive(false);
+        currState = nullState;
+        nullState.EnterState(this);
+        print(currState);
+    }
     public void OnShopClick()
     {
+        ghostObject.SetActive(true);
+        ghostSprite.sprite = null;
         currState = buyState;
         buyState.EnterState(this);
         print(currState);
+    }
+
+    public void OnShopExitHover()
+    {
+        if (currState == nullState)
+        {
+            ghostObject.SetActive(true);
+            currState = buildState;
+            buildState.EnterState(this);
+            print(currState);
+        }
     }
 
     public void OnBuyClick()
@@ -57,7 +83,6 @@ public class GameStateManager : MonoBehaviour
 
         //shows a "ghost image" of the shop item you are going to place
         ghostObject.SetActive(true);
-
     }
 
     public IEnumerator SwitchStateDelay(GameBaseState gameState, float time)
