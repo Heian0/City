@@ -25,6 +25,8 @@ public class BuildState : GameBaseState
                 placeTile(metaData.selectedID, gridPos);
             }
 
+
+            //I believe we don't need this anymore
             if (metaData.selectedType == "building")
             {
                 //we need to change this into just instatiating a prefab for the building - Nicholas
@@ -32,6 +34,7 @@ public class BuildState : GameBaseState
 
                 //instantiating a prefab of an interactable building at the mouse cursor
                 //Instantiate(metaData.instantObject, mousePos);
+                //
             }   
         }
 
