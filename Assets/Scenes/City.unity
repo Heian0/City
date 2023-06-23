@@ -535,6 +535,8 @@ GameObject:
   - component: {fileID: 212193383}
   - component: {fileID: 212193382}
   - component: {fileID: 212193381}
+  - component: {fileID: 212193384}
+  - component: {fileID: 212193385}
   m_Layer: 0
   m_Name: Ghost Image
   m_TagString: Untagged
@@ -554,11 +556,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d678033f170d64642b5af8435cde08c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
-  instantObject: {fileID: 2106133685495691889, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
+  moveSpeed: 10
+  canPlace: 1
+  canNotPlaceColor: {r: 1, g: 0, b: 0, a: 0.78431374}
+  canPlaceColor: {r: 1, g: 1, b: 1, a: 0.5882353}
+  instantObject: {fileID: 577378956}
   metaData: {fileID: 1012754053}
   sr: {fileID: 212193382}
   instantSR: {fileID: 289480772}
+  instantCollider: {fileID: 0}
+  buildingDimesions: {x: 0, y: 0}
 --- !u!212 &212193382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -599,7 +606,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
@@ -626,6 +633,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &212193384
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212193380}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.0001, y: 0.0001}
+  m_EdgeRadius: 0
+--- !u!50 &212193385
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212193380}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &262039229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -773,6 +827,14 @@ PrefabInstance:
     - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
       propertyPath: type
       value: building
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
+      propertyPath: width
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
+      propertyPath: height
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3187223931782580267, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
       propertyPath: m_Pivot.x
@@ -963,6 +1025,14 @@ PrefabInstance:
     - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
       propertyPath: type
       value: building
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
+      propertyPath: width
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
+      propertyPath: height
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
       propertyPath: itemPrice
@@ -1610,6 +1680,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574905100}
   m_CullTransparentMesh: 1
+--- !u!1 &577378956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2106133685495691889, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
+  m_PrefabInstance: {fileID: 1159503461}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &620566037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,6 +2835,14 @@ PrefabInstance:
       value: building
       objectReference: {fileID: 0}
     - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
+      propertyPath: width
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
+      propertyPath: height
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
       propertyPath: itemPrice
       value: 500
       objectReference: {fileID: 0}
@@ -3005,13 +3088,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8915459438074289220, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
+      propertyPath: m_Size.x
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8915459438074289220, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8915459438074289220, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8915459438074289220, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8915459438074289220, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8915459438074289220, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2106133685495691888, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2106133685495691888, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
       propertyPath: m_SortingOrder
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2106133685495691888, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -3021,13 +3128,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interactable Building
       objectReference: {fileID: 0}
+    - target: {fileID: 2106133685495691889, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
+      propertyPath: m_TagString
+      value: building
+      objectReference: {fileID: 0}
     - target: {fileID: 2106133685495691891, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2106133685495691891, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1000
       objectReference: {fileID: 0}
     - target: {fileID: 2106133685495691891, guid: b6dfebf50c0123443ad63d357cab3cf9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3451,6 +3562,14 @@ PrefabInstance:
     - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
       propertyPath: type
       value: building
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
+      propertyPath: width
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
+      propertyPath: height
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3187223931782580263, guid: 95f4e18716a40f34eb1f6781c37f2017, type: 3}
       propertyPath: itemPrice

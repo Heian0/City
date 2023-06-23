@@ -17,12 +17,15 @@ public class ShopItem_N : MonoBehaviour
     [Header("References")]
     public TMP_Text priceTxt;
     public TMP_Text nameTxt;
+    public int width;
+    public int height;
     public Image itemImage;
     public int id;
     public string type;
     public SpriteRenderer ghostSprite;
     public GameObject ghostObject;
     public SpriteRenderer instantSprite;
+    public BoxCollider2D instantCollider;
     //public GameObject buyPanel;
 
     public BuyState buyState;
@@ -37,6 +40,8 @@ public class ShopItem_N : MonoBehaviour
         itemImage = GameObject.Find("Image").GetComponent<Image>();
         ghostSprite = GameObject.Find("Ghost Image").GetComponent<SpriteRenderer>();
         ghostObject = GameObject.Find("Ghost Image");
+        instantSprite = GameObject.Find("Interactable Building").GetComponent<SpriteRenderer>();
+        instantCollider = GameObject.Find("Interactable Building").GetComponent<BoxCollider2D>();
     }
 
     void Awake()
@@ -65,6 +70,8 @@ public class ShopItem_N : MonoBehaviour
 
         //sets the sprite of the object to be instantiated
         instantSprite.sprite = itemArt.sprite;
-        print("something");
+        instantCollider.size = new Vector2(width, height);
+        //ghostObject.GetComponent<GhostImage>().buildingDimesions = new Vector2(width, height);
+        ghostObject.GetComponent<BoxCollider2D>().size = new Vector2(width - 0.1f, height - 0.1f);
     }
 }

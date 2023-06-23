@@ -42,7 +42,7 @@ public class GameStateManager : MonoBehaviour
         gameState.EnterState(this);
     }
 
-    //
+    //game state for when cursor is hovered over shop button to prevent building placing
     public void OnShopHover()
     {
         ghostObject.SetActive(false);
@@ -50,6 +50,8 @@ public class GameStateManager : MonoBehaviour
         nullState.EnterState(this);
         print(currState);
     }
+
+    //game state for when shop button is clicked
     public void OnShopClick()
     {
         ghostObject.SetActive(true);
@@ -59,8 +61,10 @@ public class GameStateManager : MonoBehaviour
         print(currState);
     }
 
+    //game state for when buy button is clicked in shop
     public void OnShopExitHover()
     {
+
         if (currState == nullState)
         {
             ghostObject.SetActive(true);
@@ -70,12 +74,15 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    //game state for when buy button is clicked in shop
     public void OnBuyClick()
     {
+
         currState = buildState;
         buildState.EnterState(this);
         print(currState);
 
+        //sets metadata to the shop item selected
         metaData.selectedID = metaData.curItem.id;
         metaData.selectedType = metaData.curItem.type;
         metaData.cost = metaData.curItem.itemPrice;

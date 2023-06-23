@@ -38,7 +38,7 @@ public class BuildState : GameBaseState
             }   
         }
 
-        if (Input.GetMouseButtonDown(1))
+        /*if (Input.GetMouseButtonDown(1))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int gridPos = metaData.buildingMap.WorldToCell(mousePos);
@@ -60,7 +60,7 @@ public class BuildState : GameBaseState
             Vector3Int gridPos = metaData.buildingMap.WorldToCell(mousePos);
 
             placeBuilding(2, gridPos);
-        }
+        }*/
     }
 
     private void placeTile(int tileid, Vector3Int gridPos)
