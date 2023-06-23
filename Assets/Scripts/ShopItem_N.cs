@@ -71,7 +71,10 @@ public class ShopItem_N : MonoBehaviour
         //sets the sprite of the object to be instantiated
         instantSprite.sprite = itemArt.sprite;
         instantCollider.size = new Vector2(width, height);
+
         //ghostObject.GetComponent<GhostImage>().buildingDimesions = new Vector2(width, height);
+
+        //sets ghost image to the same hitbox size as the building to be placed so it can check for collisions
         ghostObject.GetComponent<BoxCollider2D>().size = new Vector2(width - 0.1f, height - 0.1f);
     }
 }
