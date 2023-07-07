@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Grass100
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 2e0189d0fd2875f47a3dc6d6afe3bba6, type: 2}
+  sprite: {fileID: -711084703, guid: bf5fdd505a497b746988ef9ac5aaf324, type: 3}
   canPlaceBuilding: 1
   groundCode: 0
   id: 100
+  tileGroupId: 1
+  tileTypeId: 0

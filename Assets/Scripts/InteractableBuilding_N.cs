@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InteractableBuilding_N : MonoBehaviour
 {
+    public Sprite sprite;
+    public string name;
+
     // Start is called before the first frame update
     void Start()
     {

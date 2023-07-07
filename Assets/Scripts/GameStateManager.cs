@@ -9,6 +9,7 @@ public class GameStateManager : MonoBehaviour
     //gamestates
     public BuildState buildState = new BuildState();
     public BuyState buyState = new BuyState();
+    public InspectState inspectState = new InspectState();
     public NullState nullState = new NullState();
 
     public MetaData metaData;
@@ -21,7 +22,7 @@ public class GameStateManager : MonoBehaviour
     void Start()
     {
         //starting state 
-        currState = buildState;
+        currState = inspectState;
 
         //"this" is a refernece to the context (this exact MonoBehaviour script)
         currState.EnterState(this);
@@ -40,6 +41,12 @@ public class GameStateManager : MonoBehaviour
     {
         currState = gameState;
         gameState.EnterState(this);
+    }
+
+    public void OnRemoveClick()
+    {
+        GameObject.Destroy(metaData.selectedGO);
+        metaData.inspectScreen.SetActive(false);
     }
 
     //game state for when cursor is hovered over shop button to prevent building placing
@@ -74,6 +81,35 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    public void OnDoneHover()
+    {
+        ghostObject.SetActive(false);
+        currState = nullState;
+        nullState.EnterState(this);
+        print(currState);
+    }
+
+    //game state for when done button is clicked
+    public void OnDoneClick()
+    {
+        ghostObject.SetActive(true);
+        ghostSprite.sprite = null;
+        currState = inspectState;
+        inspectState.EnterState(this);
+        print(currState);
+    }
+
+    public void OnDoneExitHover()
+    {
+        if (currState == nullState)
+        {
+            ghostObject.SetActive(true);
+            currState = buildState;
+            buildState.EnterState(this);
+            print(currState);
+        }
+    }
+
     //game state for when buy button is clicked in shop
     public void OnBuyClick()
     {
@@ -86,6 +122,7 @@ public class GameStateManager : MonoBehaviour
         metaData.selectedID = metaData.curItem.id;
         metaData.selectedType = metaData.curItem.type;
         metaData.cost = metaData.curItem.itemPrice;
+        metaData.selectedName = metaData.curItem.name;
 
 
         //shows a "ghost image" of the shop item you are going to place

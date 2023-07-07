@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Ground202
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 67e9e9bc183764b48b67e4904a785625, type: 2}
+  sprite: {fileID: 1502138752, guid: b70b42181dc6f414a89c962e102ed187, type: 3}
   canPlaceBuilding: 1
   groundCode: 1
   id: 202
+  tileGroupId: 2
+  tileTypeId: 2

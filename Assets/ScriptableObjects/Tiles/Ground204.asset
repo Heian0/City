@@ -16,3 +16,5 @@ MonoBehaviour:
   canPlaceBuilding: 1
   groundCode: 1
   id: 204
+  tileGroupId: 2
+  tileTypeId: 4

@@ -9,6 +9,7 @@ public class NullState : GameBaseState
     public override void EnterState(GameStateManager gameState)
     {
         metaData = GameObject.Find("MapManager").GetComponent<MetaData>();
+        //metaData.inspectScreen.SetActive(false);
     }
 
     // Update is called once per frame

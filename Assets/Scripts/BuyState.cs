@@ -10,6 +10,8 @@ public class BuyState : GameBaseState
     public override void EnterState(GameStateManager gameState)
     {
         metaData = GameObject.Find("MapManager").GetComponent<MetaData>();
+        metaData.doneButton.gameObject.SetActive(false);
+        metaData.inspectScreen.SetActive(false);
     }
 
     // Update is called once per frame

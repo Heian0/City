@@ -6,13 +6,44 @@ using UnityEngine.Tilemaps;
 public class BuildState : GameBaseState
 {
     public MetaData metaData;
+    public SpriteRenderer sr;
     public override void EnterState(GameStateManager gameState)
     {
         metaData = GameObject.Find("MapManager").GetComponent<MetaData>();
+        metaData.doneButton.gameObject.SetActive(true);
+
+        metaData.g_grid = Grid.FindObjectOfType<Grid>();
+        metaData.instantSR = metaData.instantObject.GetComponent<SpriteRenderer>();
+        metaData.inspectScreen.SetActive(false);
     }
+
+
 
     public override void UpdateState(GameStateManager gameState)
     {
+        //gets mouse pos
+        metaData.mousePosition = Input.mousePosition;
+        metaData.mousePosition = Camera.main.ScreenToWorldPoint(metaData.mousePosition);
+
+        //moves game object to mouse then snaps to grid
+        metaData.ghostImage.transform.position = Vector2.Lerp(metaData.ghostImage.transform.position, metaData.mousePosition, metaData.moveSpeed);
+        Vector3Int cp = metaData.g_grid.LocalToCell(metaData.ghostImage.transform.localPosition);
+        metaData.ghostImage.transform.localPosition = metaData.g_grid.GetCellCenterLocal(cp);
+
+        //places building when left click
+        if (Input.GetMouseButtonDown(0) && metaData.selectedType == "building" && metaData.canPlace)
+        {
+            metaData.instantSR.sprite = metaData.sr.sprite;
+            GameObject clone = GameObject.Instantiate(metaData.instantObject, metaData.ghostImage.transform.position, metaData.ghostImage.transform.rotation);
+            metaData.gold = metaData.gold - metaData.cost;
+            metaData.goldCounter.text = metaData.gold.ToString() + " Gold";
+
+            //ignore this, I usually just comment out obsolete code but I keep it just in case
+            //instantCollider = clone.GetComponent<BoxCollider2D>();
+            //instantCollider.size = buildingDimesions;
+            //instantCollider.isTrigger = true;
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -24,43 +55,8 @@ public class BuildState : GameBaseState
             {
                 placeTile(metaData.selectedID, gridPos);
             }
-
-
-            //I believe we don't need this anymore
-            if (metaData.selectedType == "building")
-            {
-                //we need to change this into just instatiating a prefab for the building - Nicholas
-                //placeBuilding(metaData.selectedID, gridPos);
-
-                //instantiating a prefab of an interactable building at the mouse cursor
-                //Instantiate(metaData.instantObject, mousePos);
-                //
-            }   
         }
 
-        /*if (Input.GetMouseButtonDown(1))
-        {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int gridPos = metaData.buildingMap.WorldToCell(mousePos);
-
-            placeBuilding(0, gridPos);
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int gridPos = metaData.buildingMap.WorldToCell(mousePos);
-
-            placeBuilding(1, gridPos);
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3Int gridPos = metaData.buildingMap.WorldToCell(mousePos);
-
-            placeBuilding(2, gridPos);
-        }*/
     }
 
     private void placeTile(int tileid, Vector3Int gridPos)
@@ -99,51 +95,6 @@ public class BuildState : GameBaseState
         metaData.map.SetTile(b_pos, getTileWithID(b_id));
         metaData.map.SetTile(bl_pos, getTileWithID(bl_id));
         metaData.map.SetTile(l_pos, getTileWithID(l_id));
-
-        metaData.gold = metaData.gold - metaData.cost;
-        metaData.goldCounter.text = metaData.gold.ToString() + " Gold";
-    }
-
-    private void placeBuilding(int buildingid, Vector3Int gridPos)
-    {
-        List<Vector3Int> vlist = new List<Vector3Int>();
-
-        BuildingData bdata = getBuldingDataWithID(buildingid);
-
-        if (metaData.gold < metaData.cost)
-        {
-            Debug.Log("you are broke.");
-            return;
-        }
-
-        for (int i = 0; i < bdata.layout.Count; i++)
-        {
-            for(int j = 0; j < bdata.layout[i].list.Count; j++)
-            {
-                if (bdata.layout[i].list[j] == 1)
-                {
-
-                    Vector3Int pos = gridPos + new Vector3Int(j, -i);
- 
-                    if (metaData.dataFromBase[metaData.map.GetTile(pos)].canPlaceBuilding == false || metaData.buildingMap.HasTile(pos))
-                    {
-                        return;
-                    }
-
-                    if (bdata.groundCode != 99 && metaData.dataFromBase[metaData.map.GetTile(pos)].groundCode != bdata.groundCode)
-                    {
-                        return;
-                    }
-
-                    vlist.Add(pos);
-                }
-            }
-        }
-
-        for (int i = 0; i < bdata.buildingTiles.Count; i++)
-        {
-            metaData.buildingMap.SetTile(vlist[i], bdata.buildingTiles[i]);
-        }
 
         metaData.gold = metaData.gold - metaData.cost;
         metaData.goldCounter.text = metaData.gold.ToString() + " Gold";

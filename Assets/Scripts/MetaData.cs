@@ -11,7 +11,7 @@ public class MetaData : MonoBehaviour
     public Tilemap map;
 
     [SerializeField]
-    public Tilemap buildingMap;
+    public Tilemap baseMap;
 
     [SerializeField]
     public List<TileData> tileDatas;
@@ -27,8 +27,40 @@ public class MetaData : MonoBehaviour
     public ShopItem_N curItem;
 
     public int selectedID;
+    public string selectedName;
     public string selectedType;
     public int cost;
+    public Camera cam;
+
+    public GameObject inspectScreen;
+
+    public Button doneButton;
+    [SerializeField]
+    public GameObject ghostImage;
+    public GameObject tileGhostImage;
+
+    public TMP_Text selectedBuildingText;
+    public GameObject selectedGO;
+
+    public Vector3 mousePosition;
+    public float moveSpeed;
+    public Grid g_grid;
+    [SerializeField]
+    public bool canPlace;
+    [SerializeField]
+    public Color canNotPlaceColor;
+    [SerializeField]
+    public Color canPlaceColor;
+
+    public GameObject instantObject;
+    public MetaData metaData;
+
+    public int selectedTileGroupCode;
+
+    public SpriteRenderer sr;
+    public SpriteRenderer instantSR;
+    public BoxCollider2D instantCollider;
+    public Vector2 buildingDimesions;
 
     //0-tl, 1-t, 2-tr, 3-r, 4-br, 5-b, 6-bl, 7-l
     public List<Dictionary<(int, int), int>> tileDictList = new List<Dictionary<(int, int), int>>();
@@ -43,6 +75,8 @@ public class MetaData : MonoBehaviour
 
     void Start()
     {
+
+
         goldCounter.text = gold.ToString() + " Gold";
 
         foreach (var tileData in tileDatas)
