@@ -26,6 +26,7 @@ public class InspectState : GameBaseState
                 metaData.inspectScreen.SetActive(true);
                 metaData.selectedBuildingText.text = metaData.selectedName;
                 metaData.selectedGO = rayHit.collider.gameObject;
+                metaData.selectedBuildingImage.sprite = rayHit.collider.gameObject.GetComponent<SpriteRenderer>().sprite;
             }
         }
     }

@@ -3124,6 +3124,7 @@ MonoBehaviour:
   tileGhostImage: {fileID: 0}
   selectedBuildingText: {fileID: 2011214621}
   selectedGO: {fileID: 0}
+  selectedBuildingImage: {fileID: 309746190}
   mousePosition: {x: 0, y: 0, z: 0}
   moveSpeed: 10
   g_grid: {fileID: 0}

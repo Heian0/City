@@ -41,6 +41,7 @@ public class MetaData : MonoBehaviour
 
     public TMP_Text selectedBuildingText;
     public GameObject selectedGO;
+    public Image selectedBuildingImage;
 
     public Vector3 mousePosition;
     public float moveSpeed;
