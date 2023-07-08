@@ -539,6 +539,7 @@ GameObject:
   - component: {fileID: 212193381}
   - component: {fileID: 212193384}
   - component: {fileID: 212193385}
+  - component: {fileID: 212193386}
   m_Layer: 0
   m_Name: Ghost Image
   m_TagString: Untagged
@@ -558,16 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d678033f170d64642b5af8435cde08c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  canPlace: 0
-  canNotPlaceColor: {r: 0, g: 0, b: 0, a: 0}
-  canPlaceColor: {r: 0, g: 0, b: 0, a: 0}
-  instantObject: {fileID: 577378956}
-  metaData: {fileID: 1012754053}
-  sr: {fileID: 0}
-  instantSR: {fileID: 0}
-  instantCollider: {fileID: 0}
-  buildingDimesions: {x: 0, y: 0}
+  moveSpeed: 1
 --- !u!212 &212193382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -682,6 +674,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &212193386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212193380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b98e4055ed6811419f99c86b648a595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  canPlace: 0
+  canNotPlaceColor: {r: 0, g: 0, b: 0, a: 0}
+  canPlaceColor: {r: 0, g: 0, b: 0, a: 0}
+  instantObject: {fileID: 0}
+  metaData: {fileID: 0}
+  sr: {fileID: 0}
+  instantSR: {fileID: 0}
+  instantCollider: {fileID: 0}
+  buildingDimesions: {x: 0, y: 0}
 --- !u!1001 &262039229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3129,7 +3143,7 @@ MonoBehaviour:
   g_grid: {fileID: 0}
   canPlace: 1
   canNotPlaceColor: {r: 1, g: 0, b: 0, a: 0.5882353}
-  canPlaceColor: {r: 1, g: 1, b: 1, a: 1}
+  canPlaceColor: {r: 1, g: 1, b: 1, a: 0.3529412}
   instantObject: {fileID: 577378956}
   metaData: {fileID: 1012754053}
   selectedTileGroupCode: 3
