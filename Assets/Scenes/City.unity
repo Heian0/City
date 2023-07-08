@@ -536,7 +536,6 @@ GameObject:
   m_Component:
   - component: {fileID: 212193383}
   - component: {fileID: 212193382}
-  - component: {fileID: 212193381}
   - component: {fileID: 212193384}
   - component: {fileID: 212193385}
   - component: {fileID: 212193386}
@@ -547,19 +546,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &212193381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212193380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d678033f170d64642b5af8435cde08c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
 --- !u!212 &212193382
 SpriteRenderer:
   m_ObjectHideFlags: 0
