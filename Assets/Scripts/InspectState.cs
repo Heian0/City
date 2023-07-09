@@ -23,9 +23,14 @@ public class InspectState : GameBaseState
             Debug.Log(rayHit.collider.gameObject);
             if(rayHit.collider.gameObject.GetComponent<InteractableBuilding_N>() != null)
             {
+                if (metaData.selectedGO != null)
+                {
+                    metaData.selectedGO.GetComponent<InteractableBuilding_N>().isSelected = false;
+                }
                 metaData.inspectScreen.SetActive(true);
                 metaData.selectedBuildingText.text = metaData.selectedName;
                 metaData.selectedGO = rayHit.collider.gameObject;
+                metaData.selectedGO.GetComponent<InteractableBuilding_N>().isSelected = true;
                 metaData.selectedBuildingImage.sprite = rayHit.collider.gameObject.GetComponent<SpriteRenderer>().sprite;
             }
         }
