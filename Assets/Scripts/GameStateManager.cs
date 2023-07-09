@@ -124,6 +124,11 @@ public class GameStateManager : MonoBehaviour
         metaData.cost = metaData.curItem.itemPrice;
         metaData.selectedName = metaData.curItem.name;
 
+        if (metaData.selectedType == "tile")
+        {
+            metaData.selectedTile = metaData.curItem.tile;
+        }
+
 
         //shows a "ghost image" of the shop item you are going to place
         ghostObject.SetActive(true);

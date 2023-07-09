@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Tilemaps;
 
 public class ShopItem_N : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class ShopItem_N : MonoBehaviour
 
     public BuyState buyState;
     public MetaData metaData;
+
+    [SerializeField]
+    public TileBase tile;
 
     // Start is called before the first frame update
     void Start()

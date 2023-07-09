@@ -43,6 +43,8 @@ public class MetaData : MonoBehaviour
     public GameObject selectedGO;
     public Image selectedBuildingImage;
 
+    public TileBase selectedTile;
+
     public Vector3 mousePosition;
     public float moveSpeed;
     public Grid g_grid;

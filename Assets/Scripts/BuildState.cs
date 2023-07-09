@@ -44,17 +44,13 @@ public class BuildState : GameBaseState
             //instantCollider.isTrigger = true;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && metaData.selectedType == "tile")
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int gridPos = metaData.map.WorldToCell(mousePos);
 
-            //200 should become id of selected tile in shop
+            metaData.map.SetTile(gridPos, metaData.selectedTile);
 
-            if (metaData.selectedType == "tile")
-            {
-                placeTile(metaData.selectedID, gridPos);
-            }
         }
 
     }

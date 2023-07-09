@@ -14,6 +14,7 @@ public class AutoTiler : MonoBehaviour
     public List<int> twoUp;
     public List<int> twoDown;
 
+
     public List<TileData> tilesInGroup;
 
     public SpriteRenderer c;
@@ -50,6 +51,9 @@ public class AutoTiler : MonoBehaviour
     public Color cantPlaceColour;
     public Color canPlaceColour;
 
+    [SerializeField]
+    public TileBase tile;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +62,8 @@ public class AutoTiler : MonoBehaviour
         metaData.inspectScreen.SetActive(false);
         tilesInGroup = getTilesInGroup(metaData.selectedTileGroupCode);
         tilesInGroup.OrderBy(a => a.tileTypeId);
+
+
 
         allSrs.Add(c);
         allSrs.Add(tl);
@@ -83,12 +89,13 @@ public class AutoTiler : MonoBehaviour
         metaData.tileGhostImage.transform.position = Vector2.Lerp(metaData.tileGhostImage.transform.position, metaData.mousePosition, metaData.moveSpeed);
         Vector3Int cp = metaData.g_grid.LocalToCell(metaData.tileGhostImage.transform.localPosition);
         metaData.tileGhostImage.transform.localPosition = metaData.g_grid.GetCellCenterLocal(cp) + new Vector3(-0.5f, 0.5f, 0);
-
+        */
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3Int gridPos = metaData.map.WorldToCell(mousePos);
         //print(gridPos);
 
+        /*
         tl_pos = gridPos + new Vector3Int(-1, 1);
         t_pos = gridPos + new Vector3Int(0, 1);
         tr_pos = gridPos + new Vector3Int(1, 1);
@@ -220,20 +227,24 @@ public class AutoTiler : MonoBehaviour
             l.sprite = tilesInGroup[8].sprite;
             l_id = 8;
         }
+                        */
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKey(KeyCode.T))
         {       
-            metaData.map.SetTile(gridPos, tilesInGroup[c_id].tile);
-            metaData.map.SetTile(tl_pos, tilesInGroup[tl_id].tile);
-            metaData.map.SetTile(t_pos, tilesInGroup[t_id].tile);
-            metaData.map.SetTile(tr_pos, tilesInGroup[tr_id].tile);
-            metaData.map.SetTile(r_pos, tilesInGroup[r_id].tile);
-            metaData.map.SetTile(br_pos, tilesInGroup[br_id].tile);
-            metaData.map.SetTile(b_pos, tilesInGroup[b_id].tile);
-            metaData.map.SetTile(bl_pos, tilesInGroup[bl_id].tile);
-            metaData.map.SetTile(l_pos, tilesInGroup[l_id].tile);
+            //metaData.map.SetTile(gridPos, tilesInGroup[c_id].tile);
+            //metaData.map.SetTile(tl_pos, tilesInGroup[tl_id].tile);
+            //metaData.map.SetTile(t_pos, tilesInGroup[t_id].tile);
+            //metaData.map.SetTile(tr_pos, tilesInGroup[tr_id].tile);
+            //metaData.map.SetTile(r_pos, tilesInGroup[r_id].tile);
+            //metaData.map.SetTile(br_pos, tilesInGroup[br_id].tile);
+            //metaData.map.SetTile(b_pos, tilesInGroup[b_id].tile);
+            //metaData.map.SetTile(bl_pos, tilesInGroup[bl_id].tile);
+            //metaData.map.SetTile(l_pos, tilesInGroup[l_id].tile);
+
+            metaData.map.SetTile(gridPos, tile);
+            print("p");
         }
-                */
+
 
     }
 
