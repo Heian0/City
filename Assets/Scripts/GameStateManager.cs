@@ -64,7 +64,10 @@ public class GameStateManager : MonoBehaviour
     //game state for when shop button is clicked
     public void OnShopClick()
     {
-        metaData.selectedGO.GetComponent<InteractableBuilding_N>().isSelected = false;
+        if (metaData.selectedGO != null)
+        {
+            metaData.selectedGO.GetComponent<InteractableBuilding_N>().isSelected = false;
+        }
         metaData.inspectScreen.SetActive(false);
         ghostObject.SetActive(true);
         ghostSprite.sprite = null;
