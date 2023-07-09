@@ -159,6 +159,19 @@ public class GameStateManager : MonoBehaviour
         ghostObject.SetActive(true);
     }
 
+    public void OnUseClick()
+    {
+        shopButton.SetActive(false);
+        currState = inspectState;
+        buildState.EnterState(this);
+        print(currState);
+
+        metaData.isShovelling = true;
+
+        //shows a "ghost image" of the shop item you are going to place
+        ghostObject.SetActive(true);
+    }
+
     public IEnumerator SwitchStateDelay(GameBaseState gameState, float time)
     {
         beingHandled = true;

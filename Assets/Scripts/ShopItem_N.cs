@@ -63,6 +63,29 @@ public class ShopItem_N : MonoBehaviour
         //set the metadata to the current item selected
         metaData.curItem = this;
 
+        if (metaData.curItem.name == "Shovel")
+        {
+            metaData.buyButton.gameObject.SetActive(false);
+            metaData.useButton.gameObject.SetActive(true);
+            priceTxt.gameObject.SetActive(false);
+            metaData.priceText.gameObject.SetActive(false);
+
+            nameTxt.text = itemName.text;
+            itemImage.sprite = itemArt.sprite;
+
+            //sets the ghost image to the currently selected shop item
+            ghostSprite.sprite = itemArt.sprite;
+            ghostObject.SetActive(false);
+
+            return;
+
+        }
+
+
+        priceTxt.gameObject.SetActive(true);
+        metaData.priceText.gameObject.SetActive(true);
+        metaData.buyButton.gameObject.SetActive(true);
+
         //changes item stats in buy panel to the currently selected shop item
         priceTxt.text = itemPrice.ToString() + " Gold";
         nameTxt.text = itemName.text;

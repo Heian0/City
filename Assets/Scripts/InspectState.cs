@@ -33,22 +33,24 @@ public class InspectState : GameBaseState
                 metaData.selectedBuildingImage.sprite = rayHit.collider.gameObject.GetComponent<SpriteRenderer>().sprite;
             }
 
-            Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            var tpos = metaData.map.WorldToCell(worldPoint);
-
-            // Try to get a tile from cell position
-            var tile = metaData.map.GetTile(tpos);
-
-            Debug.Log(tile);
-
-            if (tile)
+            if (metaData.isShovelling)
             {
-                metaData.inspectScreen.SetActive(true);
-                metaData.selectedBuildingText.text = metaData.selectedName;
-                metaData.selectedGO = rayHit.collider.gameObject;
-                metaData.selectedGO.GetComponent<InteractableBuilding_N>().isSelected = true;
-                metaData.selectedBuildingImage.sprite = rayHit.collider.gameObject.GetComponent<SpriteRenderer>().sprite;
+                Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+                var tpos = metaData.map.WorldToCell(worldPoint);
+
+                // Try to get a tile from cell position
+                var tile = metaData.map.GetTile(tpos);
+                ;
+
+                if (tile)
+                {
+                    metaData.inspectScreen.SetActive(true);
+                    metaData.selectedBuildingText.text = metaData.selectedName;
+                    metaData.selectedGO = rayHit.collider.gameObject;
+                    metaData.selectedGO.GetComponent<InteractableBuilding_N>().isSelected = true;
+                    metaData.selectedBuildingImage.sprite = rayHit.collider.gameObject.GetComponent<SpriteRenderer>().sprite;
+                }
             }
         }
 

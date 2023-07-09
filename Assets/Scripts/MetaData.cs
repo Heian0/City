@@ -67,6 +67,10 @@ public class MetaData : MonoBehaviour
     public int selectedTileGroupCode;
     public GameObject inspectScreen;
     public Button doneButton;
+    public Button useButton;
+    public Button buyButton;
+    public TMP_Text priceText;
+    public bool isShovelling;
 
     //0-tl, 1-t, 2-tr, 3-r, 4-br, 5-b, 6-bl, 7-l
     public List<Dictionary<(int, int), int>> tileDictList = new List<Dictionary<(int, int), int>>();
@@ -81,7 +85,7 @@ public class MetaData : MonoBehaviour
 
     void Start()
     {
-
+        isShovelling = false;
 
         goldCounter.text = gold.ToString() + " Gold";
 
