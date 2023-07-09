@@ -7,6 +7,9 @@ using TMPro;
 
 public class MetaData : MonoBehaviour
 {
+    [Header("Tilemap stuff")]
+    public bool isTiling;
+
     [SerializeField]
     public Tilemap map;
 
@@ -21,49 +24,49 @@ public class MetaData : MonoBehaviour
 
     public Dictionary<TileBase, TileData> dataFromBase = new Dictionary<TileBase, TileData>();
 
+    [Header("Shop Stuff")]
     public int gold;
-
     public TMP_Text goldCounter;
+    public int cost;
     public ShopItem_N curItem;
 
+    [Header("Selected Building Stuff")]
     public int selectedID;
     public string selectedName;
     public string selectedType;
-    public int cost;
     public Camera cam;
-
-    public GameObject inspectScreen;
-
-    public Button doneButton;
-    [SerializeField]
-    public GameObject ghostImage;
-    public GameObject tileGhostImage;
-
     public TMP_Text selectedBuildingText;
     public GameObject selectedGO;
     public Image selectedBuildingImage;
 
     public TileBase selectedTile;
 
-    public Vector3 mousePosition;
-    public float moveSpeed;
-    public Grid g_grid;
+    [Header("Ghost Image Stuff")]
+    [SerializeField]
+    public GameObject ghostImage;
+    public GameObject tileGhostImage;
     [SerializeField]
     public bool canPlace;
     [SerializeField]
     public Color canNotPlaceColor;
     [SerializeField]
     public Color canPlaceColor;
+    public Vector3 mousePosition;
+    public float moveSpeed;
+    public Grid g_grid;
 
+    [Header("Stuff for object to be instantiated")]
     public GameObject instantObject;
-    public MetaData metaData;
-
-    public int selectedTileGroupCode;
-
     public SpriteRenderer sr;
     public SpriteRenderer instantSR;
     public BoxCollider2D instantCollider;
     public Vector2 buildingDimesions;
+
+    [Header("Miscellaneous")]
+    public MetaData metaData;
+    public int selectedTileGroupCode;
+    public GameObject inspectScreen;
+    public Button doneButton;
 
     //0-tl, 1-t, 2-tr, 3-r, 4-br, 5-b, 6-bl, 7-l
     public List<Dictionary<(int, int), int>> tileDictList = new List<Dictionary<(int, int), int>>();

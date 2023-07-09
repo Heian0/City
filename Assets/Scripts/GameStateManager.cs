@@ -16,6 +16,7 @@ public class GameStateManager : MonoBehaviour
 
     public GameObject ghostObject;
     public SpriteRenderer ghostSprite;
+    public GameObject shopButton;
 
     private bool beingHandled = false;
 
@@ -47,20 +48,24 @@ public class GameStateManager : MonoBehaviour
     {
         GameObject.Destroy(metaData.selectedGO);
         metaData.inspectScreen.SetActive(false);
+        metaData.gold += metaData.selectedGO.GetComponent<InteractableBuilding_N>().sellPrice;
+        metaData.goldCounter.text = metaData.gold.ToString() + " Gold";
     }
 
     //game state for when cursor is hovered over shop button to prevent building placing
-    public void OnShopHover()
+    /*public void OnShopHover()
     {
         ghostObject.SetActive(false);
         currState = nullState;
         nullState.EnterState(this);
         print(currState);
-    }
+    }*/
 
     //game state for when shop button is clicked
     public void OnShopClick()
     {
+        metaData.selectedGO.GetComponent<InteractableBuilding_N>().isSelected = false;
+        metaData.inspectScreen.SetActive(false);
         ghostObject.SetActive(true);
         ghostSprite.sprite = null;
         currState = buyState;
@@ -68,8 +73,17 @@ public class GameStateManager : MonoBehaviour
         print(currState);
     }
 
+    public void OnShopExit()
+    {
+        ghostObject.SetActive(true);
+        ghostSprite.sprite = null;
+        currState = inspectState;
+        inspectState.EnterState(this);
+        print(currState);
+    }
+
     //game state for when buy button is clicked in shop
-    public void OnShopExitHover()
+    /*public void OnShopExitHover()
     {
 
         if (currState == nullState)
@@ -79,7 +93,7 @@ public class GameStateManager : MonoBehaviour
             buildState.EnterState(this);
             print(currState);
         }
-    }
+    }*/
 
     public void OnDoneHover()
     {
@@ -92,6 +106,8 @@ public class GameStateManager : MonoBehaviour
     //game state for when done button is clicked
     public void OnDoneClick()
     {
+        metaData.isTiling = false;
+        shopButton.SetActive(true);
         ghostObject.SetActive(true);
         ghostSprite.sprite = null;
         currState = inspectState;
@@ -110,10 +126,16 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    public void OnInspectScreenExit()
+    {
+        metaData.selectedGO.GetComponent<InteractableBuilding_N>().isSelected = false;
+        metaData.inspectScreen.SetActive(false);
+    }
+
     //game state for when buy button is clicked in shop
     public void OnBuyClick()
     {
-
+        shopButton.SetActive(false);
         currState = buildState;
         buildState.EnterState(this);
         print(currState);
@@ -127,8 +149,8 @@ public class GameStateManager : MonoBehaviour
         if (metaData.selectedType == "tile")
         {
             metaData.selectedTile = metaData.curItem.tile;
+            metaData.isTiling = true;
         }
-
 
         //shows a "ghost image" of the shop item you are going to place
         ghostObject.SetActive(true);

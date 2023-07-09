@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GhostImage : MonoBehaviour
 {
-    private Vector3 mousePosition;
-    public float moveSpeed;
-    private Grid g_grid;
+    //private Vector3 mousePosition;
+    //public float moveSpeed;
+    //private Grid g_grid;
     [SerializeField]
     private bool canPlace;
     [SerializeField]
@@ -14,11 +14,11 @@ public class GhostImage : MonoBehaviour
     [SerializeField]
     private Color canPlaceColor;
 
-    public GameObject instantObject;
+    //public GameObject instantObject;
     public MetaData metaData;
 
     public SpriteRenderer sr;
-    public SpriteRenderer instantSR;
+    //public SpriteRenderer instantSR;
     public BoxCollider2D instantCollider;
     public Vector2 buildingDimesions;
 
@@ -26,9 +26,9 @@ public class GhostImage : MonoBehaviour
     void Start()
     {
         metaData = GameObject.Find("MapManager").GetComponent<MetaData>();
-        g_grid = Grid.FindObjectOfType<Grid>();
+        //g_grid = Grid.FindObjectOfType<Grid>();
         sr = gameObject.GetComponent<SpriteRenderer>();
-        instantSR = instantObject.GetComponent<SpriteRenderer>();
+        //instantSR = instantObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
