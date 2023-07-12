@@ -24,7 +24,7 @@ public class BuildState : GameBaseState
     public override void UpdateState(GameStateManager gameState)
     {
         //places building when left click
-        if (Input.GetMouseButtonDown(0) && metaData.selectedType == "building" && metaData.canPlace)
+        if (Input.GetMouseButtonDown(0) && metaData.selectedType == "building" && metaData.canPlace && goldManager.gold >= metaData.cost)
         {
             buildingManager.PlaceBuilding();
             goldManager.EditGold(metaData.curItem.itemPrice);

@@ -17,6 +17,7 @@ public class GameStateManager : MonoBehaviour
     public GameObject ghostObject;
     public SpriteRenderer ghostSprite;
     public GameObject shopButton;
+    public GoldManager goldManager;
 
     void Start()
     {
@@ -47,8 +48,7 @@ public class GameStateManager : MonoBehaviour
     {
         GameObject.Destroy(metaData.selectedGO);
         metaData.inspectScreen.SetActive(false);
-        metaData.gold += metaData.selectedGO.GetComponent<InteractableBuilding_N>().sellPrice;
-        metaData.goldCounter.text = metaData.gold.ToString() + " Gold";
+        goldManager.EditGold(metaData.selectedGO.GetComponent<InteractableBuilding_N>().sellPrice);
     }
 
     public void OnShopClick()

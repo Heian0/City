@@ -9,7 +9,7 @@ public class BuildingManager : MonoBehaviour
     {
         metaData.instantSR.sprite = metaData.sr.sprite;
         GameObject clone = GameObject.Instantiate(metaData.instantObject, metaData.ghostImage.transform.position, metaData.ghostImage.transform.rotation);
-        clone.GetComponent<InteractableBuilding_N>().sellPrice = metaData.cost;
+        clone.GetComponent<InteractableBuilding_N>().sellPrice = -metaData.cost;
     }
     public void PlaceTile()
     {
