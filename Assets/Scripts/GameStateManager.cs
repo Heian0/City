@@ -161,7 +161,7 @@ public class GameStateManager : MonoBehaviour
 
     public void OnUseClick()
     {
-        shopButton.SetActive(false);
+        shopButton.SetActive(true);
         currState = inspectState;
         buildState.EnterState(this);
         print(currState);

@@ -3330,6 +3330,7 @@ MonoBehaviour:
   useButton: {fileID: 1428116173}
   buyButton: {fileID: 2101807905}
   priceText: {fileID: 1854515200}
+  isShovelling: 0
 --- !u!114 &1012754054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4721,7 +4722,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1428116174}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1927100848}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: OnUseClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1848332388}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1428116174
 MonoBehaviour:
   m_ObjectHideFlags: 0
