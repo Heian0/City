@@ -86,6 +86,7 @@ public class GameStateManager : MonoBehaviour
     public void OnDoneClick()
     {
         metaData.isTiling = false;
+        metaData.isShovelling = false;
         shopButton.SetActive(true);
         ghostObject.SetActive(false);
         ghostSprite.sprite = null;

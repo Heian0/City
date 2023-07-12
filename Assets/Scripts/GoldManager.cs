@@ -10,6 +10,11 @@ public class GoldManager : MonoBehaviour
     public int gold;
     public TMP_Text goldCounter;
 
+    public void Start()
+    {
+        goldCounter.text = gold.ToString() + " Gold";
+    }
+
     public void EditGold(int changeInGold)
     {
         gold -= changeInGold;

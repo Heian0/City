@@ -10,14 +10,5 @@ public class TileData : ScriptableObject
 
     public Sprite sprite;
 
-    public bool canPlaceBuilding;
-
-    //0 grass, 1 sand
-    public int groundCode;
-
     public int id;
-
-    public int tileGroupId;
-
-    public int tileTypeId;
 }
