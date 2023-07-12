@@ -25028,6 +25028,7 @@ MonoBehaviour:
   ghostObject: {fileID: 212193380}
   ghostSprite: {fileID: 0}
   shopButton: {fileID: 1299468153}
+  goldManager: {fileID: 1927100849}
 --- !u!114 &1927100849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25040,7 +25041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2404a2cacb54f540870e8d539d85d1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 10000
+  gold: 250
   goldCounter: {fileID: 1416434144}
 --- !u!114 &1927100850
 MonoBehaviour:
