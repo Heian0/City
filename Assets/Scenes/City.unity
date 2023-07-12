@@ -24978,8 +24978,10 @@ GameObject:
   - component: {fileID: 1927100846}
   - component: {fileID: 1927100847}
   - component: {fileID: 1927100848}
+  - component: {fileID: 1927100850}
+  - component: {fileID: 1927100849}
   m_Layer: 0
-  m_Name: ButtonManager
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25030,6 +25032,33 @@ MonoBehaviour:
   ghostObject: {fileID: 212193380}
   ghostSprite: {fileID: 0}
   shopButton: {fileID: 1299468153}
+--- !u!114 &1927100849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927100845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2404a2cacb54f540870e8d539d85d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 10000
+  goldCounter: {fileID: 1416434144}
+--- !u!114 &1927100850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927100845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c832796f2e1faec469bd626a82bb3f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metaData: {fileID: 1012754053}
 --- !u!1 &2011214619
 GameObject:
   m_ObjectHideFlags: 0
