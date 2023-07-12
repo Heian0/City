@@ -7,12 +7,13 @@ public class BuildState : GameBaseState
 {
     public MetaData metaData;
     public SpriteRenderer sr;
+    private Grid g_grid;
     public override void EnterState(GameStateManager gameState)
     {
         metaData = GameObject.Find("MapManager").GetComponent<MetaData>();
         metaData.doneButton.gameObject.SetActive(true);
 
-        metaData.g_grid = Grid.FindObjectOfType<Grid>();
+        g_grid = Grid.FindObjectOfType<Grid>();
         metaData.instantSR = metaData.instantObject.GetComponent<SpriteRenderer>();
         metaData.inspectScreen.SetActive(false);
     }
@@ -21,15 +22,6 @@ public class BuildState : GameBaseState
 
     public override void UpdateState(GameStateManager gameState)
     {
-        //gets mouse pos
-        metaData.mousePosition = Input.mousePosition;
-        metaData.mousePosition = Camera.main.ScreenToWorldPoint(metaData.mousePosition);
-
-        //moves game object to mouse then snaps to grid
-        metaData.ghostImage.transform.position = Vector2.Lerp(metaData.ghostImage.transform.position, metaData.mousePosition, metaData.moveSpeed);
-        Vector3Int cp = metaData.g_grid.LocalToCell(metaData.ghostImage.transform.localPosition);
-        metaData.ghostImage.transform.localPosition = metaData.g_grid.GetCellCenterLocal(cp);
-
         //places building when left click
         if (Input.GetMouseButtonDown(0) && metaData.selectedType == "building" && metaData.canPlace)
         {
@@ -38,11 +30,6 @@ public class BuildState : GameBaseState
             clone.GetComponent<InteractableBuilding_N>().sellPrice = metaData.cost;
             metaData.gold = metaData.gold - metaData.cost;
             metaData.goldCounter.text = metaData.gold.ToString() + " Gold";
-
-            //ignore this, I usually just comment out obsolete code but I keep it just in case
-            //instantCollider = clone.GetComponent<BoxCollider2D>();
-            //instantCollider.size = buildingDimesions;
-            //instantCollider.isTrigger = true;
         }
 
         if (Input.GetMouseButton(0) && metaData.selectedType == "tile")

@@ -902,9 +902,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b98e4055ed6811419f99c86b648a595, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1
   canPlace: 0
-  canNotPlaceColor: {r: 0, g: 0, b: 0, a: 0}
-  canPlaceColor: {r: 0, g: 0, b: 0, a: 0}
+  canNotPlaceColor: {r: 1, g: 0, b: 0, a: 0.78431374}
+  canPlaceColor: {r: 1, g: 1, b: 1, a: 0.5882353}
   metaData: {fileID: 0}
   sr: {fileID: 0}
   instantCollider: {fileID: 0}
@@ -3543,11 +3544,6 @@ MonoBehaviour:
   ghostImage: {fileID: 212193380}
   tileGhostImage: {fileID: 0}
   canPlace: 1
-  canNotPlaceColor: {r: 1, g: 0, b: 0, a: 0.5882353}
-  canPlaceColor: {r: 1, g: 1, b: 1, a: 0.5882353}
-  mousePosition: {x: 0, y: 0, z: 0}
-  moveSpeed: 10
-  g_grid: {fileID: 0}
   instantObject: {fileID: 577378956}
   sr: {fileID: 212193382}
   instantSR: {fileID: 289480772}
