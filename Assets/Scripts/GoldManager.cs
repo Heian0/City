@@ -12,7 +12,7 @@ public class GoldManager : MonoBehaviour
 
     public void EditGold(int changeInGold)
     {
-        gold += changeInGold;
+        gold -= changeInGold;
         goldCounter.text = gold.ToString() + " Gold";
     }
 }
