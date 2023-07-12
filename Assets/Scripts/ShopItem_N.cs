@@ -8,7 +8,6 @@ using UnityEngine.Tilemaps;
 public class ShopItem_N : MonoBehaviour
 {
     [Header("Item Stats")]
-    [SerializeField]
     public int itemPrice;
     [SerializeField]
     private TMP_Text itemName;
@@ -38,6 +37,10 @@ public class ShopItem_N : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    void Awake()
+    {
         metaData = GameObject.Find("MapManager").GetComponent<MetaData>();
         priceTxt = GameObject.Find("Price").GetComponent<TMP_Text>();
         nameTxt = GameObject.Find("Item Name").GetComponent<TMP_Text>();
@@ -46,11 +49,6 @@ public class ShopItem_N : MonoBehaviour
         ghostObject = GameObject.Find("Ghost Image");
         instantSprite = GameObject.Find("Interactable Building").GetComponent<SpriteRenderer>();
         instantCollider = GameObject.Find("Interactable Building").GetComponent<BoxCollider2D>();
-    }
-
-    void Awake()
-    {
-        //buyPanel = GameObject.Find("Item Stats");
     }
     // Update is called once per frame
     void Update()

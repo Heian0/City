@@ -47,13 +47,6 @@ public class MetaData : MonoBehaviour
     public GameObject tileGhostImage;
     [SerializeField]
     public bool canPlace;
-    [SerializeField]
-    public Color canNotPlaceColor;
-    [SerializeField]
-    public Color canPlaceColor;
-    public Vector3 mousePosition;
-    public float moveSpeed;
-    public Grid g_grid;
 
     [Header("Stuff for object to be instantiated")]
     public GameObject instantObject;

@@ -35,16 +35,24 @@ public class InteractableBuilding_N : MonoBehaviour
         //building starts blinking if selected
         if (isSelected)
         {
-            sr.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * blinkSpeed, 1));
+            StartCoroutine(Blinking());
         }
         //building turns transparent to allow for better vision while tiling
         else if (metaData.isTiling)
         {
+            StopAllCoroutines();
             sr.color = tilingColor;
         }
         else
         {
+            StopAllCoroutines();
             sr.color = startColor;
         }
+    }
+
+    IEnumerator Blinking() 
+    {
+        yield return null;
+        sr.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * blinkSpeed, 1));
     }
 }

@@ -50,6 +50,7 @@ public class AutoTiler : MonoBehaviour
 
     public Color cantPlaceColour;
     public Color canPlaceColour;
+    private Grid g_grid;
 
     [SerializeField]
     public TileBase tile;
@@ -58,7 +59,7 @@ public class AutoTiler : MonoBehaviour
     void Start()
     {
         metaData = GetComponent<MetaData>();
-        metaData.g_grid = Grid.FindObjectOfType<Grid>();
+        g_grid = Grid.FindObjectOfType<Grid>();
         metaData.inspectScreen.SetActive(false);
         tilesInGroup = getTilesInGroup(metaData.selectedTileGroupCode);
         tilesInGroup.OrderBy(a => a.tileTypeId);

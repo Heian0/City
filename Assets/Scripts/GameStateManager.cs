@@ -18,8 +18,6 @@ public class GameStateManager : MonoBehaviour
     public SpriteRenderer ghostSprite;
     public GameObject shopButton;
 
-    private bool beingHandled = false;
-
     void Start()
     {
         //starting state 
@@ -44,6 +42,7 @@ public class GameStateManager : MonoBehaviour
         gameState.EnterState(this);
     }
 
+    #region Game States
     public void OnRemoveClick()
     {
         GameObject.Destroy(metaData.selectedGO);
@@ -52,16 +51,6 @@ public class GameStateManager : MonoBehaviour
         metaData.goldCounter.text = metaData.gold.ToString() + " Gold";
     }
 
-    //game state for when cursor is hovered over shop button to prevent building placing
-    /*public void OnShopHover()
-    {
-        ghostObject.SetActive(false);
-        currState = nullState;
-        nullState.EnterState(this);
-        print(currState);
-    }*/
-
-    //game state for when shop button is clicked
     public void OnShopClick()
     {
         if (metaData.selectedGO != null)
@@ -78,25 +67,12 @@ public class GameStateManager : MonoBehaviour
 
     public void OnShopExit()
     {
-        ghostObject.SetActive(true);
+        ghostObject.SetActive(false);
         ghostSprite.sprite = null;
         currState = inspectState;
         inspectState.EnterState(this);
         print(currState);
     }
-
-    //game state for when buy button is clicked in shop
-    /*public void OnShopExitHover()
-    {
-
-        if (currState == nullState)
-        {
-            ghostObject.SetActive(true);
-            currState = buildState;
-            buildState.EnterState(this);
-            print(currState);
-        }
-    }*/
 
     public void OnDoneHover()
     {
@@ -111,7 +87,7 @@ public class GameStateManager : MonoBehaviour
     {
         metaData.isTiling = false;
         shopButton.SetActive(true);
-        ghostObject.SetActive(true);
+        ghostObject.SetActive(false);
         ghostSprite.sprite = null;
         currState = inspectState;
         inspectState.EnterState(this);
@@ -139,6 +115,7 @@ public class GameStateManager : MonoBehaviour
     public void OnBuyClick()
     {
         shopButton.SetActive(false);
+        ghostObject.SetActive(true);
         currState = buildState;
         buildState.EnterState(this);
         print(currState);
@@ -154,9 +131,6 @@ public class GameStateManager : MonoBehaviour
             metaData.selectedTile = metaData.curItem.tile;
             metaData.isTiling = true;
         }
-
-        //shows a "ghost image" of the shop item you are going to place
-        ghostObject.SetActive(true);
     }
 
     public void OnUseClick()
@@ -171,16 +145,5 @@ public class GameStateManager : MonoBehaviour
         //shows a "ghost image" of the shop item you are going to place
         ghostObject.SetActive(true);
     }
-
-    public IEnumerator SwitchStateDelay(GameBaseState gameState, float time)
-    {
-        beingHandled = true;
-
-        yield return new WaitForSeconds(time);
-
-        currState = gameState;
-        gameState.EnterState(this);
-
-        beingHandled = false;
-    }
+    #endregion
 }

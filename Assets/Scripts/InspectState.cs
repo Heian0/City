@@ -18,7 +18,6 @@ public class InspectState : GameBaseState
         if (Input.GetMouseButtonDown(0))
         {
             var rayHit = Physics2D.GetRayIntersection(metaData.cam.ScreenPointToRay(Input.mousePosition));
-
             if (rayHit.collider && rayHit.collider.gameObject.GetComponent<InteractableBuilding_N>() != null)
             {
                 Debug.Log(rayHit.collider.gameObject);
